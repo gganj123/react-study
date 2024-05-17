@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./styles.css";
-
-
+import Tabs from "./components/Tabs";
+import Header from "./components/Header/Header";
 
 export default function App() {
+<<<<<<< HEAD
 
   const [selectedTopic, setSelectedTopic] = useState('Please click a button');
 
@@ -45,6 +46,15 @@ export default function App() {
           </section>
         </main>
      </div>
+=======
+  const [activeContentIndex, setActiveContentIndex] = useState(0);
+
+  return (
+    <div>
+      <Header />
+      <Tabs />
+    </div>
+>>>>>>> 321ff56b66bdbabb57792825c1694a8530c17349
   );
 }
 export default App;
