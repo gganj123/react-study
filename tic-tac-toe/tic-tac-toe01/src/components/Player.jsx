@@ -5,15 +5,21 @@ export default function Player({ name, symbol }) {
   const [plName, setPlName] = useState(name);
 
   function handleEditClick(e) {
-    setPlName(e.target.defaultValue);
     setIsEditing((editing) => !editing);
   }
 
-  let playerName = <span className="player-name">{name}</span>;
+  function handleChange(event) {
+    console.log(event);
+    setPlName(event.target.value);
+  }
+
+  let playerName = <span className="player-name">{plName}</span>;
 
   isEditing
-    ? playerName
-    : (playerName = <input type="text" required value={plName} />);
+    ? (playerName = (
+        <input type="text" required value={plName} onChange={handleChange} />
+      ))
+    : null;
   return (
     <li>
       <span className="player">
